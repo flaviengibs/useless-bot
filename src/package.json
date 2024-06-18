@@ -1,0 +1,13 @@
+{
+  "name": "the-useless-discord-bot",
+  "version": "1.0.0",
+  "description": "The most useless discord bot ever",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.15.3",
+    "express": "^4.19.2"
+  }
+}
