@@ -13,7 +13,7 @@ const client = new Client({
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setActivity('PUT YOUR OWN STATUS HERE!')
+    client.user.setActivity(' être inutile :D')
 });
 
 
