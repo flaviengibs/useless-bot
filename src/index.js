@@ -1,5 +1,5 @@
 const { Client, GatewayIntentBits } = require('discord.js');
-require('dotenv').config();
+
 const keepAlive = require('./server'); // Importer le fichier server.js
 
 const client = new Client({
