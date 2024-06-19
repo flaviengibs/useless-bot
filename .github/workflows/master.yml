@@ -26,5 +26,7 @@ jobs:
       run: npm install 
       working-directory: ./src
     - name: Run the bot
-      run: node index.js
+      run: |
+        echo "DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }}" > .env
+        run: node index.js
       working-directory: ./src
