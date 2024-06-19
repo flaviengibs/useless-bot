@@ -23,6 +23,6 @@ jobs:
         node-version: '14'
 
     - name: Install dependencies
-      run: npm install /src/package.json
+      run: npm install /src/
     - name: Run the bot
       run: node /src/index.js
