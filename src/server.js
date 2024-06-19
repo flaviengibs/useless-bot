@@ -12,4 +12,4 @@ function keepAlive() {
     });
 }
 
-module.exports = keepAlive();
+module.exports = keepAlive;
