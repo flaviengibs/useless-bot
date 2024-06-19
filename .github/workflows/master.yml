@@ -25,6 +25,11 @@ jobs:
     - name: Install dependencies
       run: npm install 
       working-directory: ./src
+
+    - name: Install dotenv
+      run: npm install dotenv
+      working-directory: ./src
+
       
     - name: Create .env file
       run: echo DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }} > .env
