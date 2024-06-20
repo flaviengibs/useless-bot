@@ -13,11 +13,12 @@ const client = new Client({
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
+    while(true){
+        client.user.setActivity("être inutile :D");
+    };
 });
 
-while(true){
-    client.user.setActivity("être inutile :D");
-};
+
 
 
 var saidBonjour = false;
