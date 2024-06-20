@@ -13,9 +13,11 @@ const client = new Client({
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setActivity(' être inutile :D')
 });
 
+while(true{
+    client.user.setActivity(
+});
 
 
 var saidBonjour = false;
@@ -52,7 +54,7 @@ client.on('messageCreate', message => {
             saidWhyNoYesBonjour = false;
             stopParler = true;
         }else if(stopParler == true) {
-            message.channel.send("Je te parle plus, espèce de vilain garçon que ma maman a dit qu'il était vilain et que même elle a toujpurs raison !")
+            message.channel.send("Je te parle plus, espèce de vilain garçon que ma maman a dit qu'il était vilain et que même elle a toujours raison !")
 
         }else {
             message.channel.send("Va voir ailleurs si j'y suis !");
