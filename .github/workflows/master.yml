@@ -1,6 +1,8 @@
 name: Node.js CI
 
 on:
+  schedule:
+    - cron: "0 */2 * * *" # This runs the workflow every 2 hours
   push:
     branches:
       - master
