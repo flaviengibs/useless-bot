@@ -52,7 +52,7 @@ client.on('messageCreate', message => {
             message.channel.send("Si si c'est vrai même que t'as pas de preuves ! C'est ma maman qui l'a dit et ma maman elle a toujours raison ! Et puis même que j'en ai marre de parler avec toi. Je te parle plus !")
             saidWhyNoYesBonjour = false;
             stopParler = true;
-        }else if(content.includes("!reinit"){
+        }else if(content.includes("!reinit")){
             var saidBonjour = false;
             var saidYesBonjour = false;
             var saidNoYesBonjour = false;
