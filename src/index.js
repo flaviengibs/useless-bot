@@ -66,4 +66,4 @@ client.on('messageCreate', message => {
 });
 
 keepAlive(); // Garder le serveur actif
-client.login(process.env.DISCORD_TOKEN);
+client.login(${{ secrets.DISCORD_TOKEN }});
