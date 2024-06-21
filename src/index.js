@@ -52,8 +52,13 @@ client.on('messageCreate', message => {
         }else if(content.includes("non") && saidBonjour == true){
             message.channel.send("Ah, désolé de l'apprendre... ")
             saidNotFine = true;
-
-        }else if{
+            saidBonjour = false;
+            
+        }else if (content.includes("ça se voit pas") && saidNotFine == true){
+            message.channel.send("Oh là, mais t'es un vilain garçon !!!!!");
+            saidWhyNoYesBonjour = true;
+            saidNotFine = false;
+            
         }else if(content.includes("!reinit")){
             saidBonjour = false;
             saidYesBonjour = false;
