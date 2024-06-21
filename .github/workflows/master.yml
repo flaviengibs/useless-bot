@@ -46,14 +46,11 @@ jobs:
       
     - name: Check for lock file & run the bot 
       run: |
-        if [ -f ./src/bot/lock]; then
+        if [ -f ./src/bot.lock ]; then
           echo "Another instance is running. Stopping this workflow."
           exit 0
         fi
           touch ./src/bot.lock
           node ./src/index.js
-          
+          rm -f ./src/bot.lock          
 
-    - name: Cleanup
-      if: always()
-      run: rm -f ./src/bot.lock
