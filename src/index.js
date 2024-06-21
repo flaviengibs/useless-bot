@@ -1,7 +1,6 @@
 const { Client, GatewayIntentBits } = require('discord.js');
 require('dotenv').config();
-const fs = require('fs');
-const path = './src/bot.lock';
+
 const keepAlive = require('./server'); // Importer le fichier server.js
 
 
@@ -12,27 +11,6 @@ const client = new Client({
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent
     ]
-});
-
-// Vérifier si le fichier de verrouillage existe
-if (fs.existsSync(path)) {
-  console.log('Le bot est déjà en cours d\'exécution.');
-  process.exit(0);
-
-}
-
-// Créer le fichier de verrouillage
-fs.writeFileSync(path, '');
-
-client.once('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setActivity("être inutile :D");
-    
-    process.on('exit', () => {
-        fs.unlinkSync(path);
-    
-    });
-
 });
 
 
