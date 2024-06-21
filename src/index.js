@@ -66,7 +66,7 @@ client.on('messageCreate', message => {
             saidWhyNoYesBonjour = false;
             stopParler = false;
             
-        }else if(stopParler == true && content.includes('si'){
+        }else if(stopParler == true && content.includes('si')){
             message.channel.send("Non !")
             
         }else if(stopParler == true && !content.includes('si')) {
