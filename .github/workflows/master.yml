@@ -50,4 +50,4 @@ jobs:
 
     - name: Cleanup
       if: always()
-      run: rm -f /src/bot.lock
+      run: rm -f ./src/bot.lock
