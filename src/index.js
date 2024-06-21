@@ -1,7 +1,10 @@
 const { Client, GatewayIntentBits } = require('discord.js');
 require('dotenv').config();
-
+const fs = require('fs');
+const path = require('path');
 const keepAlive = require('./server'); // Importer le fichier server.js
+
+
 
 const client = new Client({
     intents: [
@@ -10,6 +13,27 @@ const client = new Client({
         GatewayIntentBits.MessageContent
     ]
 });
+
+const lockFilePath = path.join('/tmp', 'bot.lock');
+
+// Vérifier si le fichier de verrouillage existe
+if (fs.existsSync(lockFilePath)) {
+  console.log('Another instance is running. Exiting.');
+  process.exit(0);
+}
+
+// Créer le fichier de verrouillage
+fs.writeFileSync(lockFilePath, '');
+
+// Supprimer le fichier de verrouillage lorsque le processus se termine
+const removeLockFile = () => {
+  if (fs.existsSync(lockFilePath)) {
+    fs.unlinkSync(lockFilePath);
+  }
+};
+process.on('exit', removeLockFile);
+process.on('SIGINT', removeLockFile);
+process.on('SIGTERM', removeLockFile);
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
