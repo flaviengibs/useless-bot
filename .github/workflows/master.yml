@@ -51,7 +51,7 @@ jobs:
           exit 0
         fi
           touch ./src/bot.lock
-          node index.js
+          node ./src/index.js
           
 
     - name: Cleanup
