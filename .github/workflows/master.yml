@@ -2,7 +2,7 @@ name: Node.js CI
 
 on:
   schedule:
-    - cron: "0 */2 * * *" # This runs the workflow every 2 hours
+    - cron: "0 */6 * * *" # This runs the workflow every 6 hours
   push:
     branches:
       - master
@@ -44,13 +44,5 @@ jobs:
       run: echo DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }} > .env
       working-directory: ./src
       
-    - name: Check for lock file & run the bot 
-      run: |
-        if [ -f ./src/bot.lock ]; then
-          echo "Another instance is running. Stopping this workflow."
-          exit 0
-        fi
-          touch ./src/bot.lock
-          node ./src/index.js
-          rm -f ./src/bot.lock          
-
+    - name: run the bot
+      run: node ./src/index.js
