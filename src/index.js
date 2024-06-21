@@ -66,7 +66,10 @@ client.on('messageCreate', message => {
             saidWhyNoYesBonjour = false;
             stopParler = false;
             
-        }else if(stopParler == true) {
+        }else if(stopParler == true && content.includes('si'){
+            message.channel.send("Non !")
+            
+        }else if(stopParler == true && !content.includes('si')) {
             message.channel.send("Je te parle plus, espèce de vilain garçon que ma maman a dit qu'il était vilain et que même elle a toujours raison !")
             
         }else {
