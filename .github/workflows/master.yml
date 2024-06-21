@@ -44,9 +44,15 @@ jobs:
       run: echo DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }} > .env
       working-directory: ./src
       
-    - name: Run the bot
-      run: node index.js
-      working-directory: ./src
+    - name: Check for lock file & run the bot 
+      run: |
+        if [ -f ./src/bot/lock]; then
+          echo "Another instance is running. Stopping this workflow."
+          exit 0
+        fi
+          touch ./src/bot.lock
+          node index.js
+          
 
     - name: Cleanup
       if: always()
