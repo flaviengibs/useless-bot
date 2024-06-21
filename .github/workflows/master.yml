@@ -38,4 +38,7 @@ jobs:
       working-directory: ./src
       
     - name: run the bot
-      run: node ./src/index.js
+      run: node index.js
+      env:
+        DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+      working-directory: ./src
