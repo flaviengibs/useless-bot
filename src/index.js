@@ -15,6 +15,7 @@ var saidNoYesBonjour = false;
 var saidWhyNoYesBonjour = false;
 var stopParler = false;
 const TARGET_CHANNEL_NAME = 'useless-bot';
+
 client.on('messageCreate', message => {
     console.log(`Message received: ${message.content}`);
     console.log(`Message channel: ${message.channel.name}`);
@@ -43,11 +44,11 @@ client.on('messageCreate', message => {
             saidWhyNoYesBonjour = false;
             stopParler = true;
         }else if(content.includes("!reinit")){
-            var saidBonjour = false;
-            var saidYesBonjour = false;
-            var saidNoYesBonjour = false;
-            var saidWhyNoYesBonjour = false;
-            var stopParler = false;
+            saidBonjour = false;
+            saidYesBonjour = false;
+            saidNoYesBonjour = false;
+            saidWhyNoYesBonjour = false;
+            stopParler = false;
         }else if(stopParler == true) {
             message.channel.send("Je te parle plus, espèce de vilain garçon que ma maman a dit qu'il était vilain et que même elle a toujours raison !")
         
