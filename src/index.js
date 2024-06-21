@@ -14,7 +14,7 @@ const client = new Client({
     ]
 });
 
-const lockFilePath = path.join('/tmp', 'bot.lock');
+const lockFilePath = path.join('/src', 'bot.lock');
 
 // Vérifier si le fichier de verrouillage existe
 if (fs.existsSync(lockFilePath)) {
