@@ -32,13 +32,6 @@ jobs:
       run: npm install dotenv
       working-directory: ./src
 
-    - name: Check for lock file
-      run: |
-          if [ -f /src/bot.lock ]; then
-            echo "Another instance is running. Exiting."
-            exit 0
-          fi
-          touch ./src/bot.lock
 
     - name: Create .env file
       run: echo DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }} > .env
