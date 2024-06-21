@@ -18,6 +18,7 @@ const client = new Client({
 if (fs.existsSync(path)) {
   console.log('Le bot est déjà en cours d\'exécution.');
   process.exit(0);
+
 }
 
 // Créer le fichier de verrouillage
