@@ -49,6 +49,7 @@ client.on('messageCreate', message => {
             message.channel.send("Si si c'est vrai même que t'as pas de preuves ! C'est ma maman qui l'a dit et ma maman elle a toujours raison ! Et puis même que j'en ai marre de parler avec toi. Je te parle plus !")
             saidWhyNoYesBonjour = false;
             stopParler = true;
+            
         }else if(content.includes("non") && saidBonjour == true){
             message.channel.send("Ah, désolé de l'apprendre... ")
             saidNotFine = true;
